@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: jdbc:h2:file:./recipe
+    username: un
+    password: pw
+    driverClassName: org.h2.Driver
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: create
+    database: h2
+    show-sql: false
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: create
+        jdbc:
+          time_zone: UTC
+  h2:
+    console.enabled: true
