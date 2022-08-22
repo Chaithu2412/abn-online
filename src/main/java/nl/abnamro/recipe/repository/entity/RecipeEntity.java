@@ -1,6 +1,7 @@
 package nl.abnamro.recipe.repository.entity;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import javax.persistence.CascadeType;
@@ -12,7 +13,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.List;
 
@@ -20,11 +20,12 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 @Table(name="RECIPE")
 public class RecipeEntity implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Column(name="NAME")
@@ -33,7 +34,7 @@ public class RecipeEntity implements Serializable {
     @Column(name="IS_VEGETARIAN")
     private boolean isVegetarian;
 
-    @OneToMany(targetEntity = IngredientEntity.class,cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(targetEntity = IngredientEntity.class, cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name="RECIPE_ID",referencedColumnName = "id")
     private List<IngredientEntity> ingredients;
 

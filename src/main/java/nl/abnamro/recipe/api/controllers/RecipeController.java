@@ -29,7 +29,6 @@ public class RecipeController {
 
     @PostMapping(value = "/recipe", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<RecipeResponse> createRecipe(@Valid @RequestBody Recipe recipe) {
-        log.info("calling create recipe service");
         return ResponseEntity.ok(recipeService.createRecipe(recipe));
     }
 
@@ -53,7 +52,6 @@ public class RecipeController {
     }
 
     @GetMapping(value="/recipe/search",produces = MediaType.APPLICATION_JSON_VALUE)
-
     public ResponseEntity<List<RecipeResponse>> searchRecipes(@RequestParam(name="isVeg", required=false) boolean isVeg,
                                                               @RequestParam(name="min_servings", required=false) Integer min_servings,
                                                               @RequestParam(name="ingredientIncluded", required=false) String ingredientIncluded,
