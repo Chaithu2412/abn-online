@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:h2:file:./recipe
+    url: jdbc:h2:mem:recipe
     username: un
     password: pw
     driverClassName: org.h2.Driver

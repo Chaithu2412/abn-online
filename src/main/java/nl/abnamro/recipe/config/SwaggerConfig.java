@@ -14,8 +14,8 @@ public class SwaggerConfig {
         return new OpenAPI()
                 .components(new Components())
                 .info(new Info()
-                        .title("Recipe Service")
-                        .description("This api creates, fetches, updates and deletes the recipes")
+                        .title("ABN Amro Recipe Services")
+                        .description("This api creates, fetches, updates, deletes and filter the recipes")
                         .version("1"));
     }
 }

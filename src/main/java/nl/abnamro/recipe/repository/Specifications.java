@@ -8,6 +8,8 @@ import javax.persistence.criteria.Join;
 
 public interface Specifications {
 
+    //these specification can be used in nay combinations for filtering the recipes
+
     public static Specification<RecipeEntity> recipeType(boolean isVeg){
         return (root, query, criteriaBuilder) -> criteriaBuilder.equal(root.get("isVegetarian"),isVeg);
     }

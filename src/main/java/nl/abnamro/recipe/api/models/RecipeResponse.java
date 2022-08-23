@@ -1,15 +1,12 @@
 package nl.abnamro.recipe.api.models;
 
-import lombok.Getter;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import javax.validation.Valid;
 
-
-@Valid
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class RecipeResponse extends Recipe {
 
     private long recipe_id;

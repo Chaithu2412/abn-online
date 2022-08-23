@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
+import static java.lang.String.format;
+
 @Slf4j
 @ControllerAdvice
 @RequiredArgsConstructor
@@ -19,5 +21,14 @@ public class RecipeExceptionHandler extends ResponseEntityExceptionHandler {
 
        return ResponseEntity.badRequest().body(ErrorResponse.builder()
                 .status(HttpStatus.BAD_REQUEST.value()).description("Requested recipe not found").build());
+    }
+
+    @ExceptionHandler(Exception.class)
+    public  ResponseEntity<ErrorResponse> handleException(Exception e){
+
+        log.error(format("System exception: %s", e.getMessage()), e);
+        return ResponseEntity.badRequest().body(ErrorResponse.builder()
+                .status(HttpStatus.INTERNAL_SERVER_ERROR.value()).description("internal server error").build());
+
     }
 }

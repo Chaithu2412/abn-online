@@ -1,4 +1,4 @@
-package nl.abnamro.recipe;
+package nl.abnamro.recipe.service;
 
 
 import nl.abnamro.recipe.api.models.Recipe;
