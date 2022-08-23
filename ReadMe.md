@@ -14,7 +14,7 @@ This can be integrated and invoked from Recipe UI component.
 
 4)H2 database for local testing
 
-#How to Run the application:
+# How to Run the application:
 
 1)Navigate to the project and build. 
   
@@ -28,7 +28,7 @@ This can be integrated and invoked from Recipe UI component.
 
 6)Use postman/soapui or any other API testing tool to invoke endpoints.
 
-#Next improvements to the API
+# Next improvements to the API
 
 1)Implement spring security/JWT authentication
 
